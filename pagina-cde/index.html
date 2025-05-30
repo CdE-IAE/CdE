@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CdE - Instituto Argentino Excelsior</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 40px; /* Ajusta este valor al tamaño deseado */
+            margin-right: 10px; /* Opcional: espacio a la derecha de la imagen */
+        }
+    </style>
 </head>
 <body>
+
     <div class="navbar">
         <div class="logo-container">
-            <img src="IMG_4293.png" alt="Logo CdE">
-        <div class="hamburger-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            <img src="IMG_4293.png.png" alt="Logo CdE">
+            <div class="hamburger-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
         <div class="nav-links">
             <a href="index.html">Inicio</a>
@@ -33,7 +46,6 @@
     </div>
 
     <div class="content">
-      
         <h1>Bienvenido al sitio web del CdE</h1>
         <div id="actas-content" style="display:none;">
             <h2>Actas</h2>
@@ -138,6 +150,16 @@ fetch(url)
   });
     </script>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburgerIcon.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
