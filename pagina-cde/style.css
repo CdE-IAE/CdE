@@ -216,6 +216,4 @@ body {
                 width: 100%;
                 justify-content: space-between; /* Espacia logo e ícono en móvil */
                 padding-right: 20px; /* Asegura espacio para el ícono */
-            }
-            .logo-container > *:first-child { /* Selecciona el primer elemento dentro de logo-container (la imagen) */
-                margin-right: auto; /* Empuja el resto de los elementos a la derecha */
+            
