@@ -212,8 +212,3 @@ body {
 .noticia-item a:hover {
     text-decoration: underline;
 }
-.logo-container {
-                width: 100%;
-                justify-content: space-between; /* Espacia logo e ícono en móvil */
-                padding-right: 20px; /* Asegura espacio para el ícono */
-            
