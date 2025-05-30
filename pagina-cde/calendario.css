@@ -1,0 +1,154 @@
+/* Estilos para el contenedor del calendario */
+.calendar-container {
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para que no se vea demasiado grande */
+    margin: 20px auto; /* Centrar horizontalmente y añadir margen arriba y abajo */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; /* Para que los bordes redondeados funcionen con los elementos internos */
+}
+
+/* Estilos para la tabla del calendario */
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse; /* Colapsar los bordes de las celdas */
+}
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.calendar-table .today {
+    background-color: #e0f7fa; /* Un color suave para el día actual */
+}
+
+.calendar-table .event {
+    background-color: #ffeb3b; /* Un color para los días con evento */
+    cursor: pointer; /* Indicar que se puede interactuar */
+}
+
+/* Estilos para la lista de eventos */
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.event-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.event-list li:last-child {
+    border-bottom: none;
+}
+/* Estilos para pantallas más pequeñas (máximo 600px de ancho) */
+@media screen and (max-width: 600px) {
+    .calendar-container {
+        margin: 10px auto;
+        border-radius: 0; /* Quitar bordes redondeados en móvil puede verse mejor */
+        border-left: none;
+        border-right: none;
+    }
+
+    .calendar-table th, .calendar-table td {
+        padding: 8px;
+        font-size: 0.9em; /* Reducir el tamaño de la fuente */
+    }
+
+    .event-list {
+        margin-top: 10px;
+    }
+
+    .event-list li {
+        font-size: 0.95em;
+        padding: 8px 0;
+    }
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.calendar-table .other-month {
+    color: #888; /* Un gris más oscuro */
+}
+/* En tu archivo calendario.css o en un bloque <style> */
+/* Estilo para la línea superior de evento */
+.calendar-table td.has-event {
+    border-top: 4px solid #ffeb3b; /* Línea amarilla más gruesa */
+    cursor: pointer;
+}/* Estilos para la lista de eventos */
+.event-list {
+    list-style: none;
+    padding: 15px; /* Añademos un poco de espacio interior */
+    margin-top: 20px;
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Un fondo gris claro */
+}
+
+.event-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.event-list li:last-child {
+    border-bottom: none;
+}
+/* Estilo para los días de otros meses */
+.calendar-table .other-month {
+    color: #aaa; /* Un gris más claro para el texto */
+    background-color: #eee; /* Un fondo gris muy claro */
+}
+.calendar-table .today {
+    background-color: #e0f7fa; /* Un color suave para el día actual */
+}
+
+/* Estilos generales del calendario */
+.calendar-table th,
+.calendar-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-table .other-month {
+    color: #aaa;
+    background-color: #eee;
+}
+
+.calendar-table .today {
+    background-color: #e0f7fa;
+}
+
+
+
+/* Estilo específico para los días con reunión general (borde superior verde) */
+.calendar-table .general-meeting {
+    border-top: 3px solid green !important; /* Usamos !important para darle más prioridad */
+    padding-top: 7px !important;
+    /* Para asegurarnos, quitamos cualquier background que pudiera estar ahí */
+    background-color: transparent !important;
+    color: inherit !important; /* Heredar el color del texto normal si se cambió */
+}

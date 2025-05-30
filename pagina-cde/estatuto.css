@@ -1,0 +1,57 @@
+            .estatuto-section {
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid #ccc;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        .estatuto-section:last-child {
+            border-bottom: none;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        .articulo {
+            margin-bottom: 1em;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        .articulo strong {
+            font-weight: bold;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        #indice {
+            margin-bottom: 2em;
+            border: 1px solid #ccc;
+            padding: 1em;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        #indice h2 {
+            margin-top: 0;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        #indice ul {
+            list-style-type: none;
+            padding: 0;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        #indice a {
+            text-decoration: none;
+            color: #000;
+            font-family: 'Times New Roman', serif; /* Fuente más formal */
+            line-height: 1.6;
+        }
+
+        h3 {
+            font-style: italic; /* Subtítulos en itálica */
+        }

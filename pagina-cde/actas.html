@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actas - CdE [Nombre de tu Colegio]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="actas.css">
+    <style>
+        .acta-fecha {
+        font-size: 0.8em;
+        color: #777;
+        margin-left: 5px;
+    }
+        .acta-item {
+            margin-bottom: 20px;
+        }
+        .pdf-horizontal-preview {
+            width: 100%;
+            height: 0; /* Inicialmente con altura 0 para la transición */
+            max-height: 900px; /* Altura máxima para la expansión */
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            overflow-x: auto;
+            overflow-y: hidden; /* Ocultar el scroll vertical durante la transición */
+            transition: height 0.3s ease-in-out; /* Añadimos la transición */
+        }
+
+        .pdf-horizontal-preview iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-horizontal-preview {
+                max-height: 400px;
+            }
+            .pdf-horizontal-preview iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="hamburger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="galeria.html">Galería</a>
+            <div class="dropdown">
+                <button class="dropbtn">Documentos</button>
+                <div class="dropdown-content">
+                    <a href="actas.html" id="actas-link">Actas</a>
+                    <a href="estatuto.html" id="estatuto-link">Estatuto</a>
+                </div>
+            </div>
+            <a href="AyP/ayp.html">Apuntes y Pruebas</a>
+            <a href="historico.html">Histórico</a>
+            <a href="ayuda.html">Ayuda</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Actas del CdE</h1>
+        <p>Haz clic en el nombre de un acta para ver la preview.</p>
+
+        <input type="text" id="filter-input" placeholder="Buscar actas...">
+
+        <ul id="acta-list">
+    <li class="acta-item">
+        <a href="actas/Acta Reunión general 09-05-2025 1.pdf" data-pdf-url="actas/Acta Reunión general 09-05-2025 1.pdf" data-preview-id="preview-1">Acta Reunión 1<span class="acta-fecha"> [09-05-2025]</span></a>
+        <div id="preview-1" class="pdf-horizontal-preview">
+            <iframe src="actas/Acta Reunión general 09-05-2025 1.pdf" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/Acta Reunión General 16-05-2025 2.pdf" data-pdf-url="actas/Acta Reunión General 16-05-2025 2.pdf" data-preview-id="preview-2">Acta Reunión 2<span class="acta-fecha"> [16-05-2025]</span></a>
+        <div id="preview-2" class="pdf-horizontal-preview">
+            <iframe src="actas/Acta Reunión General 16-05-2025 2.pdf" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta3.pdf" data-pdf-url="actas/acta3.pdf" data-preview-id="preview-3">Acta Reunión 3<span class="acta-fecha"> </span></a>
+        <div id="preview-3" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta4.pdf" data-pdf-url="actas/acta4.pdf" data-preview-id="preview-4">Acta Reunión 4<span class="acta-fecha"> </span></a>
+        <div id="preview-4" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta5.pdf" data-pdf-url="actas/acta5.pdf" data-preview-id="preview-5">Acta Reunión 5<span class="acta-fecha"> </span></a>
+        <div id="preview-5" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta6.pdf" data-pdf-url="actas/acta6.pdf" data-preview-id="preview-6">Acta Reunión 6<span class="acta-fecha"> </span></a>
+        <div id="preview-6" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta7.pdf" data-pdf-url="actas/acta7.pdf" data-preview-id="preview-7">Acta Reunión 7<span class="acta-fecha"> </span></a>
+        <div id="preview-7" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta8.pdf" data-pdf-url="actas/acta8.pdf" data-preview-id="preview-8">Acta Reunión 8<span class="acta-fecha"> </span></a>
+        <div id="preview-8" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta9.pdf" data-pdf-url="actas/acta9.pdf" data-preview-id="preview-9">Acta Reunión 9<span class="acta-fecha"> </span></a>
+        <div id="preview-9" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta10.pdf" data-pdf-url="actas/acta10.pdf" data-preview-id="preview-10">Acta Reunión 10<span class="acta-fecha"> </span></a>
+        <div id="preview-10" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta11.pdf" data-pdf-url="actas/acta11.pdf" data-preview-id="preview-11">Acta Reunión 11<span class="acta-fecha"> </span></a>
+        <div id="preview-11" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta12.pdf" data-pdf-url="actas/acta12.pdf" data-preview-id="preview-12">Acta Reunión 12<span class="acta-fecha"> </span></a>
+        <div id="preview-12" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta13.pdf" data-pdf-url="actas/acta13.pdf" data-preview-id="preview-13">Acta Reunión 13<span class="acta-fecha"> </span></a>
+        <div id="preview-13" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta14.pdf" data-pdf-url="actas/acta14.pdf" data-preview-id="preview-14">Acta Reunión 14<span class="acta-fecha"> </span></a>
+        <div id="preview-14" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta15.pdf" data-pdf-url="actas/acta15.pdf" data-preview-id="preview-15">Acta Reunión 15<span class="acta-fecha"> </span></a>
+        <div id="preview-15" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+    <li class="acta-item">
+        <a href="actas/acta16.pdf" data-pdf-url="actas/acta16.pdf" data-preview-id="preview-16">Acta Reunión 16<span class="acta-fecha"> </span></a>
+        <div id="preview-16" class="pdf-horizontal-preview">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </li>
+</ul>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="actas.js"></script>
+</body>
+</html>

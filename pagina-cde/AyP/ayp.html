@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CdE - Instituto Argentino Excelsior</title>
+    <link rel="stylesheet" href="ayp.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="hamburger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../calendario.html">Calendario</a>
+            <a href="../galeria.html">Galería</a>
+            <div class="dropdown">
+                <button class="dropbtn">Documentos</button>
+                <div class="dropdown-content">
+                    <a href="../actas.html" id="actas-link">Actas</a>
+                    <a href="../estatuto.html" id="estatuto-link">Estatuto</a>
+                </div>
+            </div>
+            <a href="ayp.html">Apuntes y Pruebas</a>
+            <a href="../historico.html">Histórico</a>
+            <a href="../ayuda.html">Ayuda</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Bienvenido al sitio web del CdE</h1>
+        <div id="actas-content" style="display:none;">
+            <h2>Actas</h2>
+            <p>Aquí podrás encontrar las actas de nuestras reuniones.</p>
+        </div>
+        <div id="estatuto-content" style="display:none;">
+            <h2>Estatuto</h2>
+            <p>Este es el estatuto de nuestro Centro de Estudiantes.</p>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <h2>Selecciona tu orientación</h2>
+        <button class="orientation-button" onclick="window.location.href='Economia y Administracion/EyA.html'">Economía y Administración</button>
+        <button class="orientation-button" onclick="window.location.href='Sociales y Humanidades/SyH.html'">Sociales y Humanidades</button>
+    </div>
+
+    <script src="ayp.js"></script>
+</body>
+</html>

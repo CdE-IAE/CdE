@@ -1,0 +1,152 @@
+/* Estilos CSS para la línea de tiempo horizontal con cursor y año */
+.timeline-horizontal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 200px 0; /* Ajustado para bajar la barra */
+    margin-bottom: 20px;
+}
+
+.timeline-line-horizontal {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+}
+
+#cursorDot {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #191970;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Inicialmente oculto */
+    pointer-events: none; /* Para que no interfiera con los eventos de la línea */
+}
+
+#cursorYear {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #333;
+}
+
+.timeline-events-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between; /* Distribuye los eventos horizontalmente */
+    padding: 0 20px; /* Espacio a los lados */
+}
+
+.timeline-event-horizontal {
+    position: absolute; /* Posiciona los eventos con 'left' */
+    text-align: center;
+    margin: 0 50px; /* Separación de los años */
+}
+
+.timeline-info-horizontal {
+    font-size: 0.9em;
+    white-space: nowrap;
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Ajusta la posición vertical del año */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#historic-details {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#details-content {
+    padding-top: 10px;
+}
+
+#details-content h4 {
+    margin-top: 0;
+}
+/* Estilos generales (escritorio) */
+.timeline-mobile {
+    display: none; /* Oculto por defecto en escritorio */
+}
+
+@media screen and (max-width: 600px) {
+    .timeline-horizontal {
+        display: none;
+    }
+
+    .timeline-mobile {
+        display: block;
+        padding: 20px;
+    }
+
+    .timeline-mobile h3 {
+        font-size: 1.5em;
+        color: #555;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .timeline-mobile ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .timeline-mobile ul li {
+        margin-bottom: 10px;
+    }
+
+    .timeline-mobile ul li a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s ease;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .timeline-mobile ul li a:hover {
+        background-color: #eee;
+    }
+
+}
+.timeline-info-horizontal a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .timeline-info-horizontal a:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        h2 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h2 a:hover {
+            color: blue;
+        }

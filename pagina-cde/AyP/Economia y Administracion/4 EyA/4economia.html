@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4to Economía y Administración - CdE Instituto Argentino Excelsior</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../EyA.css">
+    <style>
+         .content {
+    text-align: center; /* Centra el texto del encabezado y el párrafo */
+    padding: 30px;
+}
+
+.content h2 {
+    color: #375a7f;
+    margin-bottom: 20px;
+}
+
+.subject-buttons-container {
+    display: flex; /* Usamos flexbox para centrar los elementos inline */
+    flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.subject-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px; /* Espacio entre los botones */
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff; /* Un azul moderno */
+    color: white;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.subject-button:hover {
+    background-color: #0056b3;
+}
+
+.content p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="hamburger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../../index.html">Inicio</a>
+            <a href="../../../calendario.html">Calendario</a>
+            <a href="../../../galeria.html">Galería</a>
+            <div class="dropdown">
+                <button class="dropbtn">Documentos</button>
+                <div class="dropdown-content">
+                    <a href="../../../actas.html" id="actas-link">Actas</a>
+                    <a href="../../../estatuto.html" id="estatuto-link">Estatuto</a>
+                </div>
+            </div>
+            <a href="../../../AyP/ayp.html">Apuntes y Pruebas</a>
+            <a href="../../../historico.html">Histórico</a>
+            <a href="../../../ayuda.html">Ayuda</a>
+            <a href="../../../contacto.html">Contacto</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>4to Economía y Administración</h2>
+        <p>Selecciona una materia:</p>
+        <div class="subject-buttons-container">
+<button class="subject-button" onclick="window.location.href='Matemática/'">Matemática</button>
+<button class="subject-button" onclick="window.location.href='Lengua y Literatura/'">Lengua y Literatura</button>
+<button class="subject-button" onclick="window.location.href='Ingles/'">Inglés</button>
+<button class="subject-button" onclick="window.location.href='Artes Plástica/'">Artes-Plástica</button>
+<button class="subject-button" onclick="window.location.href='Artes Música/'">Artes-Música</button>
+<button class="subject-button" onclick="window.location.href='Historia/'">Historia</button>
+<button class="subject-button" onclick="window.location.href='Geografía/'">Geografía</button>
+<button class="subject-button" onclick="window.location.href='Formación Ética y Ciudadana/'">Formación Ética y Ciudadana</button>
+<button class="subject-button" onclick="window.location.href='Tecnología de la Información/'">Informatica</button>
+<button class="subject-button" onclick="window.location.href='Física/'">Física</button>
+<button class="subject-button" onclick="window.location.href='Economía/'">Economía</button>
+<button class="subject-button" onclick="window.location.href='Sistemas Administrativos/'">Sistemas Administrativos</button>
+<button class="subject-button" onclick="window.location.href='Sistemas de Información Contable/'">Sistemas de Información Contable</button>
+<button class="subject-button" onclick="window.location.href='EDI/'">EDI</button>
+<button class="subject-button" onclick="window.location.href='Tutoría/'">Tutoría</button>
+        </div>
+    </div>
+
+    <script src="4EyA.js"></script>
+</body>
+</html>

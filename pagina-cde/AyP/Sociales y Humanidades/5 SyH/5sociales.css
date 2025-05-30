@@ -1,0 +1,235 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una fuente más moderna y legible */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Un azul muy claro, casi blanco azulado (AliceBlue) */
+    color: #333; /* Texto negro suave */
+}
+
+.navbar {
+    background-color: #191970; /* Azul marino oscuro (MidnightBlue), similar al exterior del logo */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Añadido padding horizontal */
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Un blanco transparente al pasar el ratón */
+    color: white;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content {
+    padding: 20px;
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    margin-left: auto; /* Empujar los enlaces a la derecha en pantallas grandes */
+}
+
+.nav-links a, .nav-links .dropdown {
+    margin-left: 10px; /* Espacio entre los elementos del menú */
+}
+
+/* Estilos para pantallas móviles (ancho máximo de 600px, un valor común) */
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .hamburger-icon {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #191970; /* Mantener el fondo oscuro del navbar */
+        margin-left: 0; /* Resetear el margen */
+    }
+
+    .nav-links a, .nav-links .dropdown {
+        float: none;
+        display: block;
+        text-align: left;
+        margin-left: 0; /* Resetear el margen */
+    }
+
+    .nav-links a {
+        padding: 14px 16px;
+    }
+
+    .nav-links .dropdown {
+        width: 100%;
+    }
+
+    .nav-links .dropdown .dropbtn {
+        width: 100%;
+        text-align: left;
+        padding: 14px 16px;
+    }
+
+    .nav-links .dropdown-content {
+        position: relative;
+        display: none;
+        background-color: #2e8b57; /* Verde mar oscuro para el dropdown en móvil */
+        padding-left: 20px;
+    }
+
+    .nav-links .dropdown-content a {
+        padding-left: 40px;
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none; /* Deshabilitar hover en móvil */
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block !important;
+    }
+
+}
+
+.nav-active {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.content {
+    text-align: center; /* Centra el texto del encabezado y el párrafo */
+    padding: 30px;
+}
+
+.content h2 {
+    color: #375a7f;
+    margin-bottom: 20px;
+}
+
+.subject-buttons-container {
+    display: flex; /* Usamos flexbox para centrar los elementos inline */
+    flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.subject-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px; /* Espacio entre los botones */
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff; /* Un azul moderno */
+    color: white;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.subject-button:hover {
+    background-color: #0056b3;
+}
+
+.content p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555;
+}
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-submenu:hover > .dropdown-submenu-content {
+    display: block;
+}
+
+.dropdown-submenu > a:after {
+    content: "\00bb";
+    float: right;
+    margin-left: 5px;
+}

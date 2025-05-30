@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - CdE [Nombre de tu Colegio]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="historico.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="hamburger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="galeria.html">Galería</a>
+            <div class="dropdown">
+                <button class="dropbtn">Documentos</button>
+                <div class="dropdown-content">
+                    <a href="actas.html" id="actas-link">Actas</a>
+                    <a href="estatuto.html" id="estatuto-link">Estatuto</a>
+                </div>
+            </div>
+            <a href="AyP/ayp.html">Apuntes y Pruebas</a>
+            <a href="historico.html">Histórico</a>
+            <a href="ayuda.html">Ayuda</a>
+        </div>
+    </div>
+
+    <div class="estatuto-section" id="historico">
+        <h2><a href="pagina_historico_principal.html">Histórico</a></h2>
+        <p style="text-align: center; color: #777; margin-bottom: 15px;">En la vista de escritorio, pasa el cursor sobre la línea de tiempo para ver los años y haz clic para ver los detalles.</p>
+        <div class="timeline-container">
+            <div class="timeline-horizontal" id="timelineHorizontal">
+                <div class="timeline-line-horizontal" id="timelineLine">
+                    <div class="timeline-dot-horizontal" id="cursorDot">
+                        <span id="cursorYear" style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); font-size: 1.5em; white-space: nowrap; opacity: 0; transition: opacity 0.3s ease; color: #333;"></span>
+                    </div>
+                </div>
+                <div class="timeline-events-wrapper">
+                    <div class="timeline-event-horizontal" data-year="2021" style="left: 15%;">
+                        <div class="timeline-info-horizontal">
+                        </div>
+                    </div>
+                    <div class="timeline-event-horizontal" data-year="2022" style="left: 40%;">
+                        <div class="timeline-info-horizontal">
+                        </div>
+                    </div>
+                    <div class="timeline-event-horizontal" data-year="2023" style="left: 65%;">
+                        <div class="timeline-info-horizontal">
+                        </div>
+                    </div>
+                    <div class="timeline-event-horizontal" data-year="2024" style="left: 90%;">
+                        <div class="timeline-info-horizontal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="historic-details">
+            <h3>Detalles del Año:</h3>
+            <div id="details-content">
+                <p>Pasa el cursor sobre la línea de tiempo para ver el año y haz clic en un año.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline-mobile">
+        <p style="text-align: center; color: #777; margin-bottom: 15px;">Selecciona un año para ver documentos de años anteriores</p>
+        <h3>Años:</h3>
+        <ul>
+            <li><a href="años/year_2024.html">2024</a></li>
+            <li><a href="años/year_2023.html">2023</a></li>
+            <li><a href="años/year_2022.html">2022</a></li>
+            <li><a href="años/year_2021.html">2021</a></li>
+        </ul>
+    </div>
+
+    <script src="historico.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

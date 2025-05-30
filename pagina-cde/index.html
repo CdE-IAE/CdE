@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CdE - Instituto Argentino Excelsior</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="hamburger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="calendario.html">Calendario</a>
+            <a href="galeria.html">Galería</a>
+            <div class="dropdown">
+                <button class="dropbtn">Documentos</button>
+                <div class="dropdown-content">
+                    <a href="actas.html" id="actas-link">Actas</a>
+                    <a href="estatuto.html" id="estatuto-link">Estatuto</a>
+                </div>
+            </div>
+            <a href="AyP/ayp.html">Apuntes y Pruebas</a>
+            <a href="historico.html">Histórico</a>
+            <a href="ayuda.html">Ayuda</a>
+        </div>
+    </div>
+
+    <div class="content">
+      
+        <h1>Bienvenido al sitio web del CdE</h1>
+        <div id="actas-content" style="display:none;">
+            <h2>Actas</h2>
+            <p>Aquí podrás encontrar las actas de nuestras reuniones.</p>
+        </div>
+        <div id="estatuto-content" style="display:none;">
+            <h2>Estatuto</h2>
+            <p>Este es el estatuto de nuestro Centro de Estudiantes.</p>
+        </div>
+    </div>
+
+    <div id="noticias">
+        <h2>Últimas Noticias de Argentina</h2>
+    </div>
+
+    <script>
+const apiKey = 'pub_8512653e3ce0e1e054fe385c0e387fb72aff0';
+const country = 'ar';
+const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&country=${country}`; // Sin categoría específica
+const priorityKeywords = ['Maradona', 'criminales', 'escándalo', 'polémica']; // Palabras clave mediáticas
+const blockedCategories = [ 'animals'];
+const blockedKeywords = ['perro', 'fútbol', 'futbol']; // También bloqueamos "fútbol" para reducir la cantidad
+
+function filterAndSortNews(newsArray, priorityKeywords, blockedCategories, blockedKeywords) {
+  return newsArray
+    .filter(noticia => {
+      if (noticia.category && blockedCategories.some(blockCat => noticia.category.includes(blockCat))) {
+        return false;
+      }
+      if (noticia.title && blockedKeywords.some(blockWord => noticia.title.toLowerCase().includes(blockWord.toLowerCase()))) {
+        return false;
+      }
+      return true;
+    })
+    .sort((a, b) => {
+      const aHasPriority = priorityKeywords.some(keyword => a.title?.toLowerCase().includes(keyword.toLowerCase()));
+      const bHasPriority = priorityKeywords.some(keyword => b.title?.toLowerCase().includes(keyword.toLowerCase()));
+
+      if (aHasPriority && !bHasPriority) {
+        return -1;
+      }
+      if (!aHasPriority && bHasPriority) {
+        return 1;
+      }
+      return 0;
+    });
+}
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    const noticiasContainer = document.getElementById('noticias');
+    noticiasContainer.innerHTML = `<h2>Noticias de Argentina</h2>`; // Título simplificado
+
+    if (data.results && Array.isArray(data.results)) {
+      const noticiasFiltradasOrdenadas = filterAndSortNews(data.results, priorityKeywords, blockedCategories, blockedKeywords);
+
+      if (noticiasFiltradasOrdenadas.length > 0) {
+        noticiasFiltradasOrdenadas.forEach(noticia => {
+          const noticiaDiv = document.createElement('div');
+          noticiaDiv.classList.add('noticia-item');
+
+          const titulo = document.createElement('h3');
+          titulo.textContent = noticia.title || 'Sin título';
+          const enlace = document.createElement('a');
+          enlace.href = noticia.link || '#';
+          enlace.textContent = 'Leer más';
+          const fuente = document.createElement('p');
+          fuente.textContent = `Fuente: ${noticia.source_id || 'Desconocida'}`;
+
+          if (noticia.image_url) {
+            const imagen = document.createElement('img');
+            imagen.src = noticia.image_url;
+            imagen.style.maxWidth = '100%';
+            imagen.style.height = 'auto';
+            noticiaDiv.appendChild(imagen);
+          }
+
+          noticiaDiv.appendChild(titulo);
+          noticiaDiv.appendChild(fuente);
+          noticiaDiv.appendChild(enlace);
+          noticiasContainer.appendChild(noticiaDiv);
+        });
+      } else {
+        noticiasContainer.innerHTML += `<p>No se encontraron noticias de Argentina que cumplan los criterios.</p>`;
+      }
+    } else {
+      noticiasContainer.innerHTML += '<p>No se encontraron noticias de Argentina.</p>';
+    }
+  })
+  .catch(error => {
+    console.error('Error al obtener noticias:', error);
+    const noticiasContainer = document.getElementById('noticias');
+    noticiasContainer.innerHTML = `<h2>Noticias de Argentina</h2>`; // Título simplificado
+    noticiasContainer.innerHTML += '<p>Hubo un error al cargar las noticias.</p>';
+  });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
